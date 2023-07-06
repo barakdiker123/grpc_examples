@@ -42,7 +42,7 @@ using helloworld::HelloRequest;
 
 class GreeterClient {
 public:
-  GreeterClient(std::shared_ptr<Channel> channel)
+  explicit GreeterClient(std::shared_ptr<Channel> channel)
       : stub_(Greeter::NewStub(channel)) {}
 
   // Assembles the client's payload, sends it and presents the response back
@@ -119,7 +119,7 @@ int main(int argc, char **argv) {
   std::string usr_input;
   while (true) {
     std::cin >> usr_input;
-    std::cout << "The Server send: " << greeter.BarakSpecialHello(usr_input)
+    std::cout << " Server send: " << greeter.BarakSpecialHello(usr_input)
               << "\n";
   }
 

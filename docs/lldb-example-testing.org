@@ -22,13 +22,13 @@ How you doing ??
 
 Doing some read/write actions via elisp programming language
 #+begin_src emacs-lisp :tangle yes
-(let* ((stdout (generate-new-buffer "my-stdout"))
-       (stderr (generate-new-buffer "my-stderr"))
+(let* ((my-stdout (generate-new-buffer "my-stdout"))
+       (my-stderr (generate-new-buffer "my-stderr"))
        (process (make-process :name "my-program"
                               :command '("/Users/barakdiker/Documents/cpp_project_to_delete/grpc_project/build/main")
-                              :buffer stdout
-                              :stderr stderr))
-       (stderr-process (get-buffer-process stderr)))
+                              :buffer my-stdout
+                              :stderr my-stderr))
+       (stderr-process (get-buffer-process my-stderr)))
   (unless (and process stderr-process)
     (error "Process unexpectedly nil"))
   )
@@ -38,3 +38,74 @@ Doing some read/write actions via elisp programming language
 (while (accept-process-output process))
 (while (accept-process-output stderr-process))
 #+end_src
+| barak | moshea | Bobby | Nemo | Bar |
+|-------+--------+-------+------+-----|
+|     1 |      2 |     3 |    4 |   5 |
+|   1.2 |    2.3 |   3.4 |  3.4 | 5.3 |
+|   1.1 |    2.2 |     4 |    5 |   9 |
+|   0.7 |      3 |     5 |  5.5 |  13 |
+|   0.5 |    4.5 |   5.9 |    4 |  16 |
+|       |        |       |      |     |
+|       |        |       |      |     |
+
+
+#+ATTR_HTML: :width 800px :height 500px
+[[./Plots.png]]
+
+* STRT Some more Code
+- State "STRT"       from "WAIT"       [2023-07-06 Thu 14:42] \\
+  Barak!!! Diker!!
+- State "STRT"       from "PROJ"       [2023-07-06 Thu 14:41] \\
+  Barak !!!
+- Note taken on [2023-07-06 Thu 14:20] \\
+  When will I'll starttttt ???
+- Note taken on [2023-07-06 Thu 14:19] \\
+  I should finish the math works
+
+
+  - Barak
+  - Diker
+    - The
+      - Hello
+  - Hello
+
+    [ ] Vegtebles
+    [ ] fruits
+    [-]
+
+
+
+
+    
+
+
+This is some tests
+
+Another thing
+* TODO What to buy [2/4]
+Hello World
+- [ ] Barak
+- [X] Diker
+- [X] Hello
+- [-] Barakkkk
+  - [X] Animal
+  - [ ] Greate Programmer
+  - [X] Know graph thoey
+  - [X] Can't start study
+  - [ ] Hello ?
+
+
+* How to create checkboxes [1/4]
+note the following shortcuts
+
+C-c C-c -> changes the mod
+one should before the sentence use "- [ ] Something .."
+One Should do one the heading like so  "* Title [1/4] or [25%]"
+- [ ] Barak1
+- [X] Barak2
+- [ ] Diker
+  - [ ] Hello
+- [-] Goo ?
+  - [-] GOGOGGOGOG [1/2]
+    - [X] Hello
+    - [ ] Right ??
